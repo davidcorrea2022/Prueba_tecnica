@@ -1,0 +1,37 @@
+<div *ngIf="posts">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Body</th>
+                <th>Actualizar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let post of posts">
+                <th scope="row">{{ post.id }}</th>
+                <td>{{ post.title }}</td>
+                <td>{{ post.body }}</td>
+                <td>
+                    <img class="pointer" data-bs-toggle="modal" data-bs-target="#editP" (click)="infoPost( post.title, post.id, post.body, post.userId )" id="icon-edit"
+                        src="../../../assets/edit_2_line.svg" alt="" srcset="">
+                </td>
+                <td class="center">
+                    <img class="pointer" data-bs-toggle="modal" data-bs-target="#deleteP" (click)="infoPost( post.title, post.id)"
+                        id="icon-delete" src="../../../assets/delete_2_line.svg" alt="" srcset="">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <app-paginator
+        (onPosts)="updateData($event)"
+        [currentPage]="currentPage"
+        [arrPosts]="arrPosts"
+        [posts]="posts"
+        >
+    </app-paginator>
+
+</div>

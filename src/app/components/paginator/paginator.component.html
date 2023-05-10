@@ -1,0 +1,15 @@
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-end">
+        <p class="paginator-footer">Pagina {{currentPage + 1}} de {{ posts.length }}</p>
+        <li [ngClass]="currentPage == 0 ? 'disabled' : '' " class="page-item">
+            <a (click)="tooglePaginador(false)" class="page-link pointer" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li [ngClass]="currentPage == posts.length -1 ? 'disabled' : '' " class="page-item">
+            <a (click)="tooglePaginador(true)" class="page-link pointer" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>

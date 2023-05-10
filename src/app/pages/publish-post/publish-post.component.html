@@ -1,0 +1,13 @@
+<div class="col-1">
+    <button data-bs-toggle="modal" data-bs-target="#createP" id="ajust" type="button" class="btn btn-success">Publicar
+        Post</button>
+</div>
+
+
+<app-modal-create (onSubmit)="publishPost($event)"></app-modal-create>
+
+
+<app-notification
+    [alertText]="alertText"
+    [toogleAlert]="toogleAlert"
+></app-notification>

@@ -1,0 +1,19 @@
+<app-table
+    (onSubmitInfo)="info($event)"
+></app-table>
+
+<app-modal
+    (onSubmit)="submitModalDelete()"
+    [textBodyPost]="textPostDelete"
+></app-modal>
+
+<app-modal-update
+    (onSubmit)="submitModalUpdate($event)"
+    [titlePost]="titlePostEdit"
+    [bodyPost]="bodyPostEdit"
+></app-modal-update>
+
+<app-notification
+    [alertText]="alertText"
+    [toogleAlert]="toogleAlert"
+></app-notification>
